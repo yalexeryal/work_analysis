@@ -120,11 +120,14 @@
 """
 Загрузка модулей и конфигураций из внешних файлов.
 """
-from config.config_loader import ConfigLoader
+"""
+Загрузка модулей и конфигураций из внешних файлов.
+"""
+from config.config_loader import ConfigManager
 
-# Загружаем все конфигурации
-config_loader = ConfigLoader('config')
-config = config_loader.load_all()
+# Создаем менеджер конфигураций
+config_manager = ConfigManager('config')
+config = config_manager.get_config()
 
 # Экспортируем переменные для обратной совместимости
 DIPLOMA_MODULES = config['DIPLOMA_MODULES']
@@ -139,3 +142,6 @@ PROFESSION_TO_BLOCKS = config['PROFESSION_TO_BLOCKS']
 BLOCK_TO_PROFESSION = config['BLOCK_TO_PROFESSION']
 LEAD_COORDINATOR_TO_BLOCKS = config['LEAD_COORDINATOR_TO_BLOCKS']
 COORDINATORS_DICT = config['COORDINATORS']  # Новый формат (словарь)
+
+# Экспортируем менеджер для редактирования
+CONFIG_MANAGER = config_managerNATORS_DICT = config['COORDINATORS']  # Новый формат (словарь)
