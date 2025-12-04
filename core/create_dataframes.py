@@ -248,7 +248,7 @@ class DataProcessor:
             include=False
         )
 
-        columns_to_drop = ['Тип задания', 'Возможные проверяющие']
+        columns_to_drop = ['Тип задания']
         course_df = self._drop_columns(course_df, columns_to_drop)
 
         # print(f"Количество строк в курсовом DF: {len(course_df)}")
@@ -432,31 +432,3 @@ def list_df(homework_strict_filter: bool = False) -> Tuple[
     processor = DataProcessor()
     return processor.process_all(homework_strict_filter=homework_strict_filter)
 
-
-# # Пример использования
-# if __name__ == "__main__":
-#     # Создание экземпляра процессора
-#     processor = DataProcessor()
-#
-#     print("=== ТЕСТ С >=2 ДНЕЙ (ТЕКУЩАЯ ЛОГИКА) ===")
-#     base_df, diploma_df, homework_df1, course_df = processor.process_all(homework_strict_filter=False)
-#     df_corse = course_df[course_df['Дней на проверке'] >= 2]
-#     print(course_df.info())
-#     print(df_corse.info())
-#
-#     print(df_corse.to_string())
-#     processor.check_homework_stats()
-#
-#     # print("\n=== ТЕСТ С >2 ДНЕЙ (СТРОГАЯ ФИЛЬТРАЦИЯ) ===")
-#     # # Сбросим флаг для повторной обработки
-#     # processor._processed = False
-#     # processor.homework_df = None
-#     # base_df, diploma_df, homework_df2, course_df = processor.process_all(homework_strict_filter=True)
-#
-#     if processor.is_processed:
-#         min_days = REVIEW_DEADLINES['HOMEWORK']
-#         print("\n=== ИТОГИ ===")
-#         print(f"Дипломных работ: {len(diploma_df) if diploma_df is not None else 0}")
-#         print(f"Домашних заданий (≥{min_days} дней): {len(homework_df1) if homework_df1 is not None else 0}")
-#         # print(f"Домашних заданий (>{min_days} дней): {len(homework_df2) if homework_df2 is not None else 0}")
-#         print(f"Курсовых работ: {len(course_df) if course_df is not None else 0}")
