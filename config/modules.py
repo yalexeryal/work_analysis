@@ -66,17 +66,46 @@ COORDINATORS = [
     {7864914: 'Нурлан Асанбеков'},
 ]
 
-
 LEAD_COORDINATORS_TO_PROFESSION = {
-    "Иванов": "профессия1",
-    "petrov": "профессия2",
-    "sidorov": "профессия3"
+    "Ирина Панина": ['da', 'dau', 'deg'],
+    "Виктория Пятыгина": ['pydp', 'ds', 'dsu', 'aml', 'dll'],
+    "Евгения Сергеева": ['an', 'shan', 'jd', 'shjd', 'cpp', 'cppqt', 'cppiot', 'cpppue'],
+    "Элионора Петрова": ['qa', 'qamid', 'qapy', 'qamidpy', 'shqa', 'ios', 'go', 'golpro'],
+    "Анастасия Трещина": ['shdevops', 'sys', 'fops', 'abi', 'abu', 'dmar', 'pbi', 'pdx', 'ban', 'banpro'],
+    "Мария Пескова": ['sal', 'pal', 'awh', 'sup', 'sql', 'sqlp'],
+    "Оксана Махонина": ['spd', 'pd', 'fpy'],
+    "Наталья Нагаева": ['onec', 'onecmid', 'git', 'sib'],
+    "Юлия Похвищева": ['ntw', 'pae'],
+    "Алёна Хохлова": ['shfe', 'fe', 'fsmid', 'fsmidjs', 'fsmidpd', 'btrx', 'btrxpro'],
+    "Денис Кобин": ['oca', 'ocamid'],
 }
 
 PROFESSION_TO_BLOCKS = {
-    "профессия1": ['blok1', 'blok2'],
-    "профессия2": ['blok3', 'blok4'],
-    "профессия3": ['blok15', 'blok6']
+    "an": ['info-an', 'КТ', 'AND', 'ANDIN', 'ANDAD', 'BONUS-AN', 'FAN', ],
+    "shan": ['BONUS-SHAN', 'FSHAN'],
+    "jd": ['info-jd', 'JDPTL', 'JAVA', 'JM', 'ALGO', 'JAVACORE', 'JPAT', 'JADV', 'JSPR', 'JCLO', 'JDATA', 'SHMICROS',
+           'FJD'],
+    "shjd": ['BONUS-SHJD', 'FSHJD'],
+    "cpp": ['INFO-CPP', 'CPPS', 'CPPM', 'ALGOCPP', 'CPPL', 'SQLCPP', 'MAP', 'DPCPP', 'FCPP'],
+    "cppqt": ['qt', 'FCPPQT'],
+    "cppiot": ['iot', 'fcppiot'],
+    "cpppue": ['pue', 'fcppue'],
+    "fe": ['BAFE', 'HTML', 'MQ', 'PB', 'BJS', 'BHJ', 'AJS', 'AHJ', 'RA', 'FFE'],
+    "btrx": [',INFO-BTRX', ',BWEB', 'BPATTI', 'BPATTC', 'BCONT', 'BBAY', 'FBTRX'],
+    "btrxpro": ['INFO-BTRXPRO', 'BWEBPRO'],
+    "shfe": ['INFO-SHFE', 'SHFEJS', 'FSHFE'],
+    "fsmid": ['INFO-FSMID', 'BHJ', 'BPHP', 'APHP', 'LRV', 'FFSMID'],
+    "fsmidjs": ['NDSE', 'NDTNF', 'FFSMIDJS'],
+    "fsmidpd": ['PY', 'PYAPI', 'FSWEBPY', 'FFSMIDPD'],
+    "sys": ['INFO-SYS', 'SLINA', 'SLINB', 'SLINC', 'BASH', 'NET', 'SVIRT', 'CICD', 'ISPM', 'SMON', 'SFLT', 'SYSDB',
+            'SDBSQL', 'SYSSEC', 'FSYS'],
+    "fops": ['INFO-FOPS', 'COURSE-FOPS', 'GIT-FOPS', 'SHVIRTD', 'SHTER', 'SHKONF', 'SHCICD-DEV', 'SHMON-DEV',
+             'SHMICROS', 'SHKUBER', 'SHCLOPRO', 'FFOPS'],
+    "shdevops": ['info-shdevops', 'FSHDEVOPS'],
+    "1": [],
+    "2": [],
+    "3": [],
+
 }
 
 # Создание словаря из двух словарей

@@ -73,7 +73,7 @@ class MainProcessor:
         processor = CourseWorksProcessor()
         processor.process_course_works(course_df, str(self.output_folder), strict_filter=False)
 
-    def run_regular_processing(self, diploma_df, homework_df, course_df) -> None:
+    def run_regular_processing(self, diploma_df, homework_df) -> None:
         """Запускает регулярную обработку (все дни кроме четверга)."""
         print("Обработка дипломных и домашних работ")
 
@@ -84,7 +84,7 @@ class MainProcessor:
         self._process_homework_works(homework_df)
 
         # Обработка курсовых работ
-        self._process_course_works(course_df)
+        # self._process_course_works(course_df)
 
     def _process_diploma_works(self, diploma_df) -> None:
         """Обрабатывает дипломные работы."""
@@ -121,7 +121,8 @@ class MainProcessor:
             if self.day_name == 'Thursday':
                 self.run_thursday_processing(course_df)
             else:
-                self.run_regular_processing(diploma_df, homework_df, course_df)
+                self.run_regular_processing(diploma_df, homework_df)
+                # self.run_regular_processing(diploma_df, homework_df, course_df)
 
             print("Обработка завершена успешно!")
 

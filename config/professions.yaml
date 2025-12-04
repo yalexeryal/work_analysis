@@ -1,0 +1,123 @@
+# Профессии и соответствующие блоки
+profession_to_blocks:
+  an:
+    - info-an
+    - КТ
+    - AND
+    - ANDIN
+    - ANDAD
+    - BONUS-AN
+    - FAN
+  shan:
+    - BONUS-SHAN
+    - FSHAN
+  jd:
+    - info-jd
+    - JDPTL
+    - JAVA
+    - JM
+    - ALGO
+    - JAVACORE
+    - JPAT
+    - JADV
+    - JSPR
+    - JCLO
+    - JDATA
+    - SHMICROS
+    - FJD
+  shjd:
+    - BONUS-SHJD
+    - FSHJD
+  cpp:
+    - INFO-CPP
+    - CPPS
+    - CPPM
+    - ALGOCPP
+    - CPPL
+    - SQLCPP
+    - MAP
+    - DPCPP
+    - FCPP
+  cppqt:
+    - qt
+    - FCPPQT
+  cppiot:
+    - iot
+    - fcppiot
+  cpppue:
+    - pue
+    - fcppue
+  fe:
+    - BAFE
+    - HTML
+    - MQ
+    - PB
+    - BJS
+    - BHJ
+    - AJS
+    - AHJ
+    - RA
+    - FFE
+  btrx:
+    - INFO-BTRX
+    - BWEB
+    - BPATTI
+    - BPATTC
+    - BCONT
+    - BBAY
+    - FBTRX
+  btrxpro:
+    - INFO-BTRXPRO
+    - BWEBPRO
+  shfe:
+    - INFO-SHFE
+    - SHFEJS
+    - FSHFE
+  fsmid:
+    - INFO-FSMID
+    - BHJ
+    - BPHP
+    - APHP
+    - LRV
+    - FFSMID
+  fsmidjs:
+    - NDSE
+    - NDTNF
+    - FFSMIDJS
+  fsmidpd:
+    - PY
+    - PYAPI
+    - FSWEBPY
+    - FFSMIDPD
+  sys:
+    - INFO-SYS
+    - SLINA
+    - SLINB
+    - SLINC
+    - BASH
+    - NET
+    - SVIRT
+    - CICD
+    - ISPM
+    - SMON
+    - SFLT
+    - SYSDB
+    - SDBSQL
+    - SYSSEC
+    - FSYS
+  fops:
+    - INFO-FOPS
+    - COURSE-FOPS
+    - GIT-FOPS
+    - SHVIRTD
+    - SHTER
+    - SHKONF
+    - SHCICD-DEV
+    - SHMON-DEV
+    - SHMICROS
+    - SHKUBER
+    - SHCLOPRO
+    - FFOPS
+  shdevops:
+    - info-shdevops
+    - FSHDEVOPS
