@@ -1,4 +1,3 @@
-# Словарь координаторов
 coordinators:
   7930978: Ирина Рыбакова
   7998125: Настя Рябова
@@ -23,75 +22,73 @@ coordinators:
   7150186: Росина Савицкая
   7183936: Елена Зайцева
   7864914: Нурлан Асанбеков
-
-# Ведущие координаторы по профессиям
 lead_coordinators_to_profession:
   Ирина Панина:
-    - da
-    - dau
-    - deg
+  - da
+  - dau
+  - deg
   Виктория Пятыгина:
-    - pydp
-    - ds
-    - dsu
-    - aml
-    - dll
+  - pydp
+  - ds
+  - dsu
+  - aml
+  - dll
   Евгения Сергеева:
-    - an
-    - shan
-    - jd
-    - shjd
-    - cpp
-    - cppqt
-    - cppiot
-    - cpppue
+  - an
+  - shan
+  - jd
+  - shjd
+  - cpp
+  - cppqt
+  - cppiot
+  - cpppue
   Элионора Петрова:
-    - qa
-    - qamid
-    - qapy
-    - qamidpy
-    - shqa
-    - ios
-    - go
-    - golpro
+  - qa
+  - qamid
+  - qapy
+  - qamidpy
+  - shqa
+  - ios
+  - go
+  - golpro
   Анастасия Трещина:
-    - shdevops
-    - sys
-    - fops
-    - abi
-    - abu
-    - dmar
-    - pbi
-    - pdx
-    - ban
-    - banpro
+  - shdevops
+  - sys
+  - fops
+  - abi
+  - abu
+  - dmar
+  - pbi
+  - pdx
+  - ban
+  - banpro
   Мария Пескова:
-    - sal
-    - pal
-    - awh
-    - sup
-    - sql
-    - sqlp
+  - sal
+  - pal
+  - awh
+  - sup
+  - sql
+  - sqlp
   Оксана Махонина:
-    - spd
-    - pd
-    - fpy
+  - spd
+  - pd
+  - fpy
   Наталья Нагаева:
-    - onec
-    - onecmid
-    - git
-    - sib
+  - onec
+  - onecmid
+  - git
+  - sib
   Юлия Похвищева:
-    - ntw
-    - pae
+  - ntw
+  - pae
   Алёна Хохлова:
-    - shfe
-    - fe
-    - fsmid
-    - fsmidjs
-    - fsmidpd
-    - btrx
-    - btrxpro
+  - shfe
+  - fe
+  - fsmid
+  - fsmidjs
+  - fsmidpd
+  - btrx
+  - btrxpro
   Денис Кобин:
-    - oca
-    - ocamid
+  - oca
+  - ocamid1
