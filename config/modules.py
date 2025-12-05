@@ -117,9 +117,7 @@
 # #         BLOCK_TO_LEAD_COORDINATORS[block] = name
 # #
 # # print(BLOCK_TO_LEAD_COORDINATORS)
-"""
-Загрузка модулей и конфигураций из внешних файлов.
-"""
+
 """
 Загрузка модулей и конфигураций из внешних файлов.
 """
