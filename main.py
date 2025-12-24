@@ -2,15 +2,67 @@
 Основной модуль для запуска обработки данных о заданиях студентов.
 """
 import os
+import shutil
+from functools import wraps
 from datetime import datetime
 from pathlib import Path
 
-from config.constants import DEFAULT_OUTPUT_FOLDER, DEFAULT_INPUT_FILE
+from config.constants import DEFAULT_OUTPUT_FOLDER, DEFAULT_INPUT_FILE, DEFAULT_input_FOLDER
 from core.create_dataframes import DataProcessor
 from models.course import CourseWorksProcessor
 from models.diploma import process_diploma_works
 from models.homework import process_unverified_works
 
+
+def clean_folders_decorator():
+    """
+    Декоратор для очистки папок:
+    - перед вызовом функции: удаляет все файлы из DEFAULT_OUTPUT_FOLDER (кроме __init__.py);
+    - после вызова функции: удаляет все файлы из DEFAULT_INPUT_FILE (кроме __init__.py).
+    """
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            # 1. Очистка выходной папки ПЕРЕД запуском функции
+            if os.path.exists(DEFAULT_OUTPUT_FOLDER):
+                for filename in os.listdir(DEFAULT_OUTPUT_FOLDER):
+                    filepath = os.path.join(DEFAULT_OUTPUT_FOLDER, filename)
+                    # Сохраняем __init__.py и директории
+                    if filename == '__init__.py' or os.path.isdir(filepath):
+                        continue
+                    try:
+                        if os.path.isfile(filepath):
+                            os.remove(filepath)
+                        elif os.path.islink(filepath):
+                            os.unlink(filepath)
+                    except Exception as e:
+                        print(f"Ошибка при удалении файла {filepath}: {e}")
+            else:
+                print(f"Папка {DEFAULT_OUTPUT_FOLDER} не существует, пропускаем очистку.")
+
+            # 2. Вызов основной функции
+            result = func(*args, **kwargs)
+
+            # 3. Очистка входной папки ПОСЛЕ выполнения функции
+            if os.path.exists(DEFAULT_input_FOLDER):
+                for filename in os.listdir(DEFAULT_input_FOLDER):
+                    filepath = os.path.join(DEFAULT_input_FOLDER, filename)
+                    # Сохраняем __init__.py и директории
+                    if filename == '__init__.py' or os.path.isdir(filepath):
+                        continue
+                    try:
+                        if os.path.isfile(filepath):
+                            os.remove(filepath)
+                        elif os.path.islink(filepath):
+                            os.unlink(filepath)
+                    except Exception as e:
+                        print(f"Ошибка при удалении файла {filepath}: {e}")
+            else:
+                print(f"Папка {DEFAULT_INPUT_FILE} не существует, пропускаем очистку.")
+
+            return result
+        return wrapper
+    return decorator
 
 class MainProcessor:
     """Основной класс для управления процессом обработки данных."""
@@ -130,7 +182,7 @@ class MainProcessor:
             print(f"Произошла ошибка при обработке: {e}")
             raise
 
-
+@clean_folders_decorator()
 def main():
     """
     Основная функция для запуска обработки.
