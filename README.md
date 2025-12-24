@@ -33,60 +33,68 @@ markdown
    git clone https://github.com/yalexeryal/work_analysis.git
    cd work_analysis
    ```
+2. Создайте виртуальное окружение:
+    ```bash
+   python -m venv .venv
+   ```
 
-2. Установите зависимости:
+3. Установите зависимости:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. Запустите анализ:
+4. Запустите анализ:
     ```bash
     python main.py
     ```
-   
-4. Структура проекта
+5. Для запуска GUI:
+    ```bash
+   python gui_app.py
+   ```
+    Запустите main.bat.bat в корневой папке приложения
+
+6.  Структура проекта
 ``` 
-├── .gitignore
-├── README.md
-├── config
-│   ├── __init__.py
-│   ├── config_editor.py
-│   ├── config_loader.py
-│   ├── constants.py
-│   ├── coordinators.yaml
-│   ├── dates.json
-│   ├── module.yaml
-│   ├── modules.py
-│   └── professions.yaml
-├── core
-│   ├── __init__.py
-│   ├── create_dataframes.py
-│   ├── get_coordinators.py
-│   ├── get_module.py
-│   ├── processor_adapter.py
-│   └── working_days.py
-├── edit_config.py
-├── main.py
-├── models
-│   ├── __init__.py
-│   ├── course.py
-│   ├── diploma.py
-│   ├── homework.py
-│   └── utils.py
-├── original_files
-│   ├── __init__.py
-├── print_tree.py
-├── requirements.txt
-├── result_files
-│   ├── __init__.py
-│   
-├── run_app.py
-└── utils
-    ├── __init__.py
-    ├── config_editor_gui.py
-    ├── install.py
-    ├── run_editor.bat
-    └── run_editor.sh
+├── .gitignore               # Файл для игнорирования ненужных файлов в Git репозитории
+├── README.md                # Описание проекта, инструкции по установке и использованию
+├── config                   # Директория для хранения конфигурационных файлов и скриптов
+│   ├── __init__.py          # Пустой файл для включения модуля Python
+│   ├── config_editor.py     # Редактор конфигурации
+│   ├── config_loader.py     # Загрузчик конфигураций
+│   ├── constants.py         # Константы и глобальные переменные
+│   ├── coordinators.yaml    # Конфигурационный YAML-файл координаторов
+│   ├── dates.json           # JSON-файл с датами
+│   ├── module.yaml          # Модульная конфигурация
+│   ├── modules.py           # Логика модулей
+│   └── professions.yaml     # Профили студентов / преподавателей
+├── core                     # Основная логика программы
+│   ├── __init__.py          # Пустой файл для включения модуля Python
+│   ├── create_dataframes.py # Создание фреймов данных (DataFrames)
+│   ├── get_coordinators.py  # Получение списка координаторов
+│   ├── get_module.py        # Работа с модулем
+│   ├── processor_adapter.py # Адаптер процессора
+│   └── working_days.py      # Определение рабочих дней
+├── edit_config.py           # Внешняя точка входа для редактирования конфигурации
+├── main.py                  # Главная точка входа в программу
+├── gui_app.py               # Главная точка входа в программу GUI приложении
+├── models                   # Модели данных
+│   ├── __init__.py          # Пустой файл для включения модуля Python
+│   ├── course.py            # Модель курса
+│   ├── diploma.py           # Модель диплома
+│   ├── homework.py          # Модель домашнего задания
+│   └── utils.py             # Вспомогательные методы моделей
+├── original_files           # Исходники проектов (не используется в коде?)
+│   ├── __init__.py          # Пустой файл для включения модуля Python
+├── print_tree.py            # Печать структуры дерева проекта
+├── requirements.txt         # Список зависимостей проекта
+├── result_files             # Папка для сохранения результатов
+│   ├── __init__.py          # Пустой файл для включения модуля Python
+└── utils                    # Различные вспомогательные модули
+    ├── __init__.py          # Пустой файл для включения модуля Python
+    ├── config_editor_gui.py # Графический интерфейс редактора конфигурации
+    ├── install.py           # Установка зависимостей и настройка окружения
+    ├── run_editor.bat       # Бэт-файл для запуска редактора конфигурации в Windows
+    └── run_editor.sh        # Bash-скрипт для запуска редактора конфигурации в Linux/MacOS
 ```
 ## Инструкция по использованию GUI для редактирования конфигураций:
 Зайдите в папку utils:
