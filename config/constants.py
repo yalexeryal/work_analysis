@@ -8,9 +8,21 @@ REQUIRED_COLUMNS = [
     'Проверяющий', 'Возможные проверяющие', 'Дней на проверке', 'Тип задания', 'coord_id'
 ]
 
+RESULT_COLUMNS = [
+                'Модуль',
+                'Название задания',
+                'Ссылка на работу в админке',
+                'Ссылка на работу в ЛК эксперта',
+                'ID студента',
+                'Отправлена',
+                'Проверяющий',
+                'Возможные проверяющие',
+                'Дней на проверке',
+            ]
+
 # Сроки проверки в рабочих днях
 REVIEW_DEADLINES = {
-    'DIPLOMA': 7,
+    'DIPLOMA': 5,
     'HOMEWORK': 2,
     'COURSE_PROJECT': 5
 }
@@ -21,5 +33,5 @@ DATE_FORMATS = ['%Y-%m-%d', '%d.%m.%Y', '%Y/%m/%d']
 # Пути к файлам
 DEFAULT_INPUT_FILE = "original_files/Непроверенные_работы.xlsx"
 DEFAULT_OUTPUT_FOLDER = "result_files/"
-DEFAULT_input_FOLDER = "original_files/"
+DEFAULT_INPUT_FOLDER = "original_files/"
 

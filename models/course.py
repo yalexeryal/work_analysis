@@ -8,7 +8,7 @@ from typing import Set
 import time
 
 from config.modules import DIPLOMA_MODULES, SELF_ASSIGNMENT_MODULES, COORDINATORS
-from config.constants import REVIEW_DEADLINES
+from config.constants import REVIEW_DEADLINES, RESULT_COLUMNS
 from core.get_coordinators import get_coordinator_name
 from core.get_module import get_base_module
 
@@ -101,6 +101,8 @@ class CourseWorksProcessor:
             # Файл с работами без проверяющих
             no_reviewers_file = output_path / f'Курсовые_без_проверяющих_{today_str}.txt'
             with open(no_reviewers_file, 'w', encoding='utf-8') as f:
+                f.write(f"Всем привет!\n"
+                        f"Курсовые работы без проверяющих.\n\n")
                 if coordinators_without_reviewers:
                     for coordinator_name, works in coordinators_without_reviewers.items():
                         f.write(f"@{coordinator_name}\n")

@@ -47,6 +47,7 @@ diploma_modules:
 - fios
 - fibtp
 - fibtd
+- fibtf
 - fjd
 - fntw
 - fonec
@@ -66,8 +67,6 @@ diploma_modules:
 - fshqa
 - fspd
 - fsppue
-- fsql
-- fsqlp
 - fsys
 - pyda-diplom
 - shpaefin
@@ -93,6 +92,7 @@ self_assignment_modules:
 - dwh-sqld
 - fps
 - fsqlp
+- fsql
 - git-fops
 - gobase
 - gomult
