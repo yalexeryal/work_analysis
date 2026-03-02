@@ -2,7 +2,7 @@
 Основной модуль для запуска обработки данных о заданиях студентов.
 """
 import os
-import shutil
+# import shutil
 from functools import wraps
 from datetime import datetime
 from pathlib import Path
