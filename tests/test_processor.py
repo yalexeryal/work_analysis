@@ -36,10 +36,11 @@ def test_module_matching_diploma(sample_modules_json, sample_calendar_json):
     df = pd.DataFrame(data)
     df = processor.add_module_flags(df)
 
-    assert df.iloc[0]["is_diploma_module"] is True
-    assert df.iloc[1]["is_diploma_module"] is True
-    assert df.iloc[2]["is_diploma_module"] is True
-    assert df.iloc[3]["is_diploma_module"] is False
+    # ✅ Используем == вместо is (pandas возвращает numpy.bool_)
+    assert df.iloc[0]["is_diploma_module"] == True   # точное совпадение
+    assert df.iloc[1]["is_diploma_module"] == True   # с номером потока
+    assert df.iloc[2]["is_diploma_module"] == True   # игнор регистра
+    assert df.iloc[3]["is_diploma_module"] == False  # НЕ должно матчиться
 
 
 def test_module_matching_self_assignment(sample_modules_json, sample_calendar_json):
@@ -50,10 +51,11 @@ def test_module_matching_self_assignment(sample_modules_json, sample_calendar_js
     df = pd.DataFrame(data)
     df = processor.add_module_flags(df)
 
-    assert df.iloc[0]["is_self_assign_module"] is True
-    assert df.iloc[1]["is_self_assign_module"] is True
-    assert df.iloc[2]["is_self_assign_module"] is False
-    assert df.iloc[3]["is_self_assign_module"] is True
+    # ✅ Используем == вместо is
+    assert df.iloc[0]["is_self_assign_module"] == True
+    assert df.iloc[1]["is_self_assign_module"] == True
+    assert df.iloc[2]["is_self_assign_module"] == False
+    assert df.iloc[3]["is_self_assign_module"] == True
 
 
 def test_missing_modules_json(tmp_path, sample_calendar_json):
@@ -96,4 +98,3 @@ def test_sla_kurs_passed(sample_modules_json, sample_calendar_json):
     datasets = processor.get_datasets(df)
 
     assert len(datasets["kurs"]) == 1
-    
