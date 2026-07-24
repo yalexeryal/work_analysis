@@ -2,8 +2,11 @@ diploma_modules:
 - dip-abi
 - dip-dmar
 - diplom-abu
+- diplom-aie
+- diplom-aiepro
 - diplom-aml
 - diplom-awh
+- diplom-awh-trfsz
 - diplom-ban
 - diplom-banpro
 - diplom-da
@@ -29,6 +32,7 @@ diploma_modules:
 - fbtrx
 - fcpp
 - fcppiot
+- fcpppue
 - fcppqt
 - ffe
 - ffjs
@@ -54,9 +58,7 @@ diploma_modules:
 - fonecmid
 - fonecmid-prod
 - fpae
-- fpbi
 - fpd
-- fpdx
 - fqa
 - fqamid
 - fqapy
@@ -81,6 +83,7 @@ self_assignment_modules:
 - apid
 - apid-oca
 - arch-sal
+- atr
 - atra
 - bash
 - cicd
@@ -90,6 +93,8 @@ self_assignment_modules:
 - dfd-ds
 - dmar
 - dwh-sqld
+- fpbi
+- fpdx
 - fps
 - fsqlp
 - fsql
@@ -102,11 +107,13 @@ self_assignment_modules:
 - info-oca
 - info-sys
 - ispm
+- jadv
 - maa
 - mbp
 - mbpn
 - mca
-- mdpa
+- mbpa
+- mds
 - net
 - oca-b
 - okmid
