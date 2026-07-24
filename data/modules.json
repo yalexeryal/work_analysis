@@ -1,0 +1,31 @@
+{
+  "description": "Списки модулей для классификации работ.",
+  "diploma_modules": [
+    "dip-abi", "dip-dmar", "diplom-abu", "diplom-aie", "diplom-aiepro",
+    "diplom-aml", "diplom-awh", "diplom-awh-trfsz", "diplom-ban",
+    "diplom-banpro", "diplom-da", "diplom-dau", "diplom-deg",
+    "diplom-degneo", "diplom-degpro", "diplom-ds", "diplom-dsu",
+    "diplom-mlecv", "diplom-mlenlp", "diplom-oca", "diplom-ocamid",
+    "diplom-prmlec", "diplom-prmlen", "diplom-prmleu", "diplom-sal",
+    "diplom-salban", "diplom-smle", "diplom-sup", "diplom-supn",
+    "fan", "fbtrx", "fcpp", "fcppiot", "fcpppue", "fcppqt", "ffe",
+    "ffjs", "ffops", "ffopsj", "ffpy", "ffs", "ffsmid", "ffsmidjs",
+    "ffsmidpd", "fgo", "fgolpro", "fib", "fibdef", "fibweb", "fios",
+    "fjd", "fntw", "fonec", "fonecmid", "fonecmid-prod", "fpae",
+    "fpd", "fprmpt", "fqa", "fqamid", "fqapy", "fshan", "fshdevops",
+    "fshfe", "fshjd", "fshqa", "fspd", "fsppue", "fsys", "shpaefin"
+  ],
+  "self_assignment_modules": [
+    "abd", "abt", "acv", "aiba", "aic", "als", "apid", "apid-oca",
+    "arch-sal", "atr", "atra", "bash", "cicd", "codeplc", "course-fops",
+    "dfd", "dfd-ds", "dmar", "dwh-sqld", "fpbi", "fpdx", "fps", "fsql",
+    "fsqlp", "git-fops", "gobase", "gomult", "imba", "info-dmar",
+    "info-fops", "info-oca", "info-sys", "ispm", "jadv", "maa", "mbp",
+    "mbpa", "mbpn", "mca", "net", "oca-b", "okmid", "phd", "rnfda",
+    "rnfdap", "roman", "scada", "sdbsql", "sdm", "sflt", "shcicd",
+    "shclopro", "shkonf", "shkuber", "shmicros", "shmon-dev", "shter",
+    "shvirtd", "skds", "slina", "slinb", "slinc", "smon", "sql",
+    "sql-asinhr", "ssoca", "stpy", "svirt", "sysdb", "syssec", "tab",
+    "tl", "tra_arh", "upk", "xls", "yzda"
+  ]
+}
