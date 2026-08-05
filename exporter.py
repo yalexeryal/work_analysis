@@ -66,19 +66,33 @@ class DataExporter:
                 )
                 f.write(f"@{coord_str} \n")
 
+                # for _, row in group.iterrows():
+                #     module = str(row["Модуль"])
+                #     task = str(row["Название задания"])
+                #
+                #     sent_date = row["Отправлена"]
+                #     if isinstance(sent_date, pd.Timestamp):
+                #         sent_date = sent_date.strftime("%d.%m.%Y")
+                #     else:
+                #         sent_date = str(sent_date).split(" ")[0]
+                #
+                #     link = str(row["Ссылка на работу в админке"])
+                #     f.write(f"{module}\t{task}\t{sent_date}\t{link}\n")
+                # f.write("\n")
+
                 for _, row in group.iterrows():
                     module = str(row["Модуль"])
                     task = str(row["Название задания"])
-
                     sent_date = row["Отправлена"]
+
+                    # ИЗМЕНЕНО: формат даты на ГГГГ-ММ-ДД, как в вашем примере
                     if isinstance(sent_date, pd.Timestamp):
-                        sent_date = sent_date.strftime("%d.%m.%Y")
+                        sent_date = sent_date.strftime("%Y-%m-%d")
                     else:
                         sent_date = str(sent_date).split(" ")[0]
 
                     link = str(row["Ссылка на работу в админке"])
                     f.write(f"{module}\t{task}\t{sent_date}\t{link}\n")
-                f.write("\n")
 
         print(f"✅ Сохранён TXT файл: {filepath} ({len(df_filtered)} строк)")
         

@@ -171,10 +171,7 @@ class DataProcessor:
 
     def get_datasets(self, df: pd.DataFrame) -> dict:
         """
-        Разделяет обогащённый DataFrame на категории с учётом SLA.
-
-        Returns:
-            dict с ключами: 'diploma', 'dz', 'kurs'.
+        Разделяет обогащённый DataFrame на категории.
         """
         drop_cols = [
             "is_diploma_module",
@@ -189,20 +186,34 @@ class DataProcessor:
         mask_diploma = (df["Тип задания"] == "Диплом") & df["is_diploma_module"]
         diploma_df = df[mask_diploma].drop(columns=drop_cols, errors="ignore")
 
-        # 2. ДЗ (Тип=ДЗ И прошло >= 2 рабочих дней)
+        # 2. ДЗ (Тип=ДЗ И прошло >= SLA_DZ_DAYS рабочих дней)
         mask_dz = (df["Тип задания"] == "ДЗ") & df["sla_dz_passed"]
         dz_df = df[mask_dz].drop(columns=drop_cols, errors="ignore")
 
-        # 3. Курсовые (Тип=Диплом, НО модуль НЕ из дипломных + SLA >= 5 дней)
-        mask_kurs = (
-            (df["Тип задания"] == "Диплом")
-            & (~df["is_diploma_module"])
-            & df["sla_kurs_passed"]
-        )
-        kurs_df = df[mask_kurs].copy()
+        # 3. Курсовые: базовый датасет (Тип=Диплом, НО модуль НЕ из дипломных)
+        mask_kurs_base = (df["Тип задания"] == "Диплом") & (~df["is_diploma_module"])
+
+        # Для TXT: оставляем флаг is_self_assign_module, убираем только лишнее
+        cols_to_drop_for_txt = [
+            "is_diploma_module",
+            "Отправлена_date",
+            "wait_days",
+            "sla_dz_passed",
+            "sla_kurs_passed",
+        ]
+        kurs_base_df = df[mask_kurs_base].drop(columns=cols_to_drop_for_txt, errors="ignore").copy()
+
+        # Для Excel: базовый датасет + фильтр по SLA
+        mask_kurs_overdue = mask_kurs_base & df["sla_kurs_passed"]
+        kurs_overdue_df = df[mask_kurs_overdue].drop(columns=drop_cols, errors="ignore")
+
+        # 🔍 ОТЛАДКА: выводим количество строк, чтобы видеть, где теряются данные
+        print(
+            f"🔍 Отладка датасетов: Всего={len(df)}, Дипломы={len(diploma_df)}, ДЗ={len(dz_df)}, Курсовые(база)={len(kurs_base_df)}, Курсовые(SLA)={len(kurs_overdue_df)}")
 
         return {
             "diploma": diploma_df,
             "dz": dz_df,
-            "kurs": kurs_df,
+            "kurs": kurs_overdue_df,
+            "kurs_base": kurs_base_df,
         }
